@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>Day 1</title>
+		<script type="text/javascript" src ="js/common.js"> </script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
+	</head>
+	<body>
+		<div class="center">
+				<button id="btn">Press</button>
+				<input type="text" value=""id="alias" placeholder="Text here." />
+				
+				<div id="response"></div>
+				
+		</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				alert('Carga finalizada');
+				$('#alias').focus();
+				
+			$('#btn').click(function(){
+				$.post('../api/dispatcher.php', {
+					service: 'welcome.hello', //Nombre del servicio.
+					params: {
+						name:$('#alias').val() //val() devuelve valor del imput.
+					}
+				}, function(data,status){ //data = params['name'], return status.
+					if (status == 'success'){
+						//Coloreo el nombre.
+						data = data.replace( $('#alias').val() , '<span style="background: red;">'+$('#alias').val()+'</span>');
+						$('#response').html(data);
+					}else{
+						$('#response').html(data);
+						$('#response').css({'background':'red'});
+					}
+				});
+			});
+			
+			
+
+
+				
+
+			});
+		</script>
+		
+		
+		
+	</body>
+</html>
