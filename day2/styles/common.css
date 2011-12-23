@@ -6,6 +6,11 @@ DIV.center{
 	background: green;
 }
 
+DIV.center INPUT{
+	width: auto;
+	text-align: center;
+}
+
 #response{
 	font: bold 11px Helvetica;
 	color: black;
