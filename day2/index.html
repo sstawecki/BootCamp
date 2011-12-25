@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Day 2</title>
@@ -13,45 +14,61 @@
 		
 	</head>
 	<body>
-		<div class="center">
-				<button id="btn">Press</button>
-				<input type="text" value=""id="alias" placeholder="Text here." />
+
+	
+	<div data-role="page" id="main"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Main Page</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content">	
 				
-				<div id="response"></div>
-		</div>
+				<div class='ui-bar' style="text-align: center">
+						<a href="#page1" data-role="button">Page 1</a><br/>
+						<a href="#page2" data-role="button">Page 2</a>
+				</div> <!-- Bar -->				
+				
+				
+			</div><!-- /content -->
+		</div><!-- /page -->
+	
+	
+	
+		<div data-role="page" id="page1"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 1</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a turpis vitae nisi tincidunt euismod vitae a nisl.
+				<div data-role="button" style="width: 160px; margin:0 auto; padding: 5px;" id="btn">Click and wait!</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+		
+		
+		<div data-role="page" id="page2"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 2</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content" style="text-align: center;">	
+				Content: Page 2.
+			</div><!-- /content -->
+		</div><!-- /page -->
+		
+		
 		
 		<script type="text/javascript">
-			$(document).ready(function() {
-				//alert('Carga finalizada'); //Comento esta línea molesta.
-				$('#alias').focus();
-				
-			$('#btn').click(function(){
-				$.post('../api/dispatcher.php', {
-					service: 'welcome.hello', //Nombre del servicio.
-					params: {
-						name:$('#alias').val() //val() devuelve valor del imput.
-					}
-				}, function(data,status){ //data = params['name'], return status.
-					if (status == 'success'){
-						//Coloreo el nombre.
-						data = data.replace( $('#alias').val() , '<span style="background: red;">'+$('#alias').val()+'</span>');
-						$('#response').html(data);
-					}else{
-						$('#response').html(data);
-						$('#response').css({'background':'red'});
-					}
+			$(document).ready(function(){ // acá creo que debería poner pageInit(){...
+			
+				$('#btn').click(function(){
+						$.mobile.showPageLoadingMsg();
+						$("#btn").text('Press any key to stop loading.');
+						$(document).keypress(function(e) { //No pude hacer que funcione la tecla ESC.
+								$.mobile.hidePageLoadingMsg();
+								$("#btn").text('Key code: '+e.which+ ". Try again!"); //No pude agregar salto de línea. probé con \n y con <br/>
+						});
 				});
-			});
 			
-			
-
-
-				
-
 			});
 		</script>
-		
-		
 		
 	</body>
 </html>
