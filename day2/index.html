@@ -16,26 +16,27 @@
 	<body>
 
 	
-	<div data-role="page" id="main"> 
-			<div data-role="header">
-				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Main Page</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
-			</div><!-- /header -->
-			<div data-role="content">	
-				
-				<div class='ui-bar' style="text-align: center">
-						<a href="#page1" data-role="button">Page 1</a><br/>
-						<a href="#page2" data-role="button">Page 2</a>
-				</div> <!-- Bar -->				
-				
-				
-			</div><!-- /content -->
+		<div data-role="page" id="main"> 
+				<div data-role="header">
+					<h1 style="margin: 0 auto; width:162px;"><div style="text-align: center; padding: 10px;">Main Page</div></h1>
+				</div><!-- /header -->
+				<div data-role="content">	
+					
+					<div class='ui-bar' style="text-align: center">
+							<a href="#page1" data-role="button" data-transition="slideup">Page 1</a><br/>
+							<a href="#page2" data-role="button" data-transition="fade">Page 2</a><br/>
+							<a href="#page3" data-role="button" data-transition="pop">Page 3</a>
+					</div> <!-- Bar -->				
+					
+					
+				</div><!-- /content -->
 		</div><!-- /page -->
 	
 	
 	
 		<div data-role="page" id="page1"> 
 			<div data-role="header">
-				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 1</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 1</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
 			</div><!-- /header -->
 			<div data-role="content">	
 				<p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a turpis vitae nisi tincidunt euismod vitae a nisl.
@@ -46,13 +47,23 @@
 		
 		<div data-role="page" id="page2"> 
 			<div data-role="header">
-				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 2</div><a href="#main" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 2</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
 			</div><!-- /header -->
 			<div data-role="content" style="text-align: center;">	
 				Content: Page 2.
+				<a href="pages/sample1.php" data-rel="dialog" data-role="button">Open dialog</a>
 			</div><!-- /content -->
 		</div><!-- /page -->
 		
+		<div data-role="page" id="page3"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 3</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content" style="text-align: center;">	
+				Content: Page 3. (You're not sure.)
+				<a href="pages/sample1.php" data-role="button">Go to sample1.php</a>
+			</div><!-- /content -->
+		</div><!-- /page -->		
 		
 		
 		<script type="text/javascript">
