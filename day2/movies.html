@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Day 2 | Movies</title>
+		
+		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
+		<script type="text/javascript" src ="js/common.js"> </script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<!--Mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>		
+		<!-- ---- -->
+		
+	</head>
+	<body>
+
+				<div data-role="header">
+					<h1 style="margin: 0 auto; width:162px; padding: 10px;">Movies</h1>
+				</div><!-- /header -->
+				<div data-role="content" id="result">				
+					
+
+					
+				</div><!-- /content -->	
+		
+		
+		<script type="text/javascript">
+			//$(document).ready(function(){ // acá creo que debería poner pageInit(){...
+
+				$.post('api/dispatcher.php', {
+					service: 'movie.getTop', //Nombre del servicio.
+					params: null
+				}, function(data,status){
+
+					var result = '';
+					
+					//Muestro 10 películas...aunque me peleé un poco con los estilos porque primero aplica el CSS y después aparece el texto JS en bolas
+					//Entonces tengo que definirle las clases o inventar algo para poner primero la estructura HTML y después la información por JS.
+					result = '<ul data-role="listview">';
+					for(var i=0; i<11; ++i){
+						
+								result = result + '<li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-li-has-count ui-btn-up-undefined"> <h2 id="title">'+data[i].Name+'</h2> </li>';
+								result = result + '<li class="ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-btn-up-c" data-theme=c">';
+									result = result + '<br/><p class="ui-li-desc"><strong>Year: </strong><i id="year">'+data[i].ReleaseYear+'</i></p>';
+									result = result + '<p class="ui-li-desc"><strong>Synopsis: </strong><i id="synopsis">'+data[i].ShortSynopsis+'</i></p>';
+									result = result + '<p class="ui-li-desc"><strong>URL: </strong><i id="url"><a href="'+data[i].Url+'">'+data[i].Url+'</a></i></p>';
+									result = result + '<p class="ui-li-desc"><strong>Rating: </strong><i id="rating">'+data[i].AverageRating+'</i></p>';
+								result = result + '</li>';
+						
+					}
+					result = result + '</ul>';
+
+
+					$('#result').html(result);
+				} //Fin de la función
+				); //Fin de $.post
+			//});
+		</script>
+		
+	</body>
+</html>
