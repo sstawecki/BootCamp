@@ -1,0 +1,19 @@
+DIV.center{
+	border: solid 1px;
+	width: 200px;
+	text-align: center;
+	margin: 100px auto 0 auto;
+	background: green;
+}
+
+DIV.center INPUT{
+	width: auto;
+	text-align: center;
+}
+
+#response{
+	font: bold 11px Helvetica;
+	color: black;
+	background: green;
+	padding: 10px;
+}

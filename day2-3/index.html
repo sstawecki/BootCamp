@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Day 2</title>
+		
+		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
+		<script type="text/javascript" src ="js/common.js"> </script>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<!--Mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>		
+		<!-- ---- -->
+		
+	</head>
+	<body>
+
+	
+		<div data-role="page" id="main"> 
+				<div data-role="header">
+					<h1 style="margin: 0 auto; width:162px;"><div style="text-align: center; padding: 10px;">Main Page</div></h1>
+				</div><!-- /header -->
+				<div data-role="content">	
+					
+					<div class='ui-bar' style="text-align: center">
+							<a href="#page1" data-role="button" data-transition="slideup">Page 1</a><br/>
+							<a href="#page2" data-role="button" data-transition="fade">Page 2</a><br/>
+							<a href="#page3" data-role="button" data-transition="pop">Page 3</a>
+					</div> <!-- Bar -->				
+					
+					
+				</div><!-- /content -->
+		</div><!-- /page -->
+	
+	
+	
+		<div data-role="page" id="page1"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 1</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content">	
+				<p style="text-align: center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a turpis vitae nisi tincidunt euismod vitae a nisl.
+				<div data-role="button" style="width: 160px; margin:0 auto; padding: 5px;" id="btn">Click and wait!</div>
+			</div><!-- /content -->
+		</div><!-- /page -->
+		
+		
+		<div data-role="page" id="page2"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 2</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content" style="text-align: center;">	
+				Content: Page 2.
+				<a href="pages/sample1.php" data-rel="dialog" data-role="button">Open dialog</a>
+			</div><!-- /content -->
+		</div><!-- /page -->
+		
+		<div data-role="page" id="page3"> 
+			<div data-role="header">
+				<h1 style="margin: 0 auto; width:162px;"><div style="float:left; width:100px; margin-top: 6px;">Page 3</div><a href="index.html" data-role="button" style="float:right; width: 60px;">Menu</a></h1>
+			</div><!-- /header -->
+			<div data-role="content" style="text-align: center;">	
+				Content: Page 3. (You're not sure.)
+				<a href="pages/sample1.php" data-role="button">Go to sample1.php</a>
+			</div><!-- /content -->
+		</div><!-- /page -->		
+		
+		
+		<script type="text/javascript">
+			$(document).ready(function(){ // acá creo que debería poner pageInit(){...
+			
+				$('#btn').click(function(){
+						$.mobile.showPageLoadingMsg();
+						$("#btn").text('Press any key to stop loading.');
+						$(document).keypress(function(e) { //No pude hacer que funcione la tecla ESC.
+								$.mobile.hidePageLoadingMsg();
+								$("#btn").text('Key code: '+e.which+ ". Try again!"); //No pude agregar salto de línea. probé con \n y con <br/>
+						});
+				});
+			
+			});
+		</script>
+		
+	</body>
+</html>
