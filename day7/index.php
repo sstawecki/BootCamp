@@ -15,14 +15,7 @@
         <!-- include jquery toolkit here -->
         
         <!-- default javascript content -->
-		
-		<script>
-			require(["js/movie", "a.js", "b.js"], function(someModule) {
-
-			});
-		</script>
-		
-		
+				
         <!-- include your default js file here -->
 		<script type="text/javascript" src="js/common.js"></script>
     </head>
