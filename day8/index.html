@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>Day 8</title>
+		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/smart-2.6.min.js"></script>
+	</head>
+	<body>
+		
+		<script id="profile_tpl" type="text/x-jsmart-tmpl"> 
+		   <h1>{$name}</h1>
+		   <div style="float: left;"><img src="{$photo}" /></div>
+			<div style="clear:both;"></div>
+		   {foreach $contacts as $i => $contact}
+			  <div style="background-color: {cycle values="cyan,yellow"};">
+				 [{$i+1}] {$contact.name}<br/><b>URL: </b>{$contact.url}
+			  </div>
+		   {foreachelse}
+			  No contacts
+		   {/foreach}
+
+		   Total: {$contact@total}
+		</script>
+
+		
+		<script type="text/javascript">
+		//Profile
+		   var profile = {
+			   name: 'Sebastián Stawecki',
+			   photo: 'http://8e.img.v4.skyrock.net/8e0/meanounette/pics/2946969387_1_11.jpg'
+				   contacts: [
+						  {
+								 name  : 'Batman',          
+								 url : 'http://btcmp.com/batman',                            
+						  },
+						  {
+								 name  : 'Sheldon Cooper',
+								 url : 'http://facebook.com/Sheldon'
+						  },
+						  {
+								 name  : 'Cumbio',
+								 url : 'http://fotolog.com/cumbio',
+						  }
+						]      
+				};
+
+				var tpl = new jSmart(document.getElementById('profile_tpl').innerHTML);
+				var res = tpl.fetch(data);
+				document.write( res );
+		</script>		
+		
+		
+		
+		
+		
+		
+		
+		<script type="text/javascript" src="js/common.js"></script>
+	</body>
+</html>
