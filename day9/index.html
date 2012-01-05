@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Day 8</title>
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="js/underscore-min.js"></script>		
+		<script type="text/javascript" src="js/backbone.js"></script>
+	</head>
+	<body>
+		
+		
+		
+		
+		
+		<script type="text/javascript">
+  			var Movie = Backbone.Model.extend({
+				idAttribute: 'title',
+				initialize: function(){
+				   alert('Se creó una nueva instancia de Movie.')
+				},
+				defaults: {
+					title: 'N/A',
+					director: 'N/A',
+					rating: 'N/A'
+				}
+			});
+			//TEST<<----------------------------------------->>
+			var m = new Movie({'vampire':'Dakota Fanning'}); //Agrego un parámetro extra colgado.
+			console.log('Vampire: '+m.get('vampire'));
+			console.log('Title: '+m.get('title'));
+			m.set({'title':'New Moon'});
+			console.log('Title again: '+m.get('title'));
+			console.log('ID Película: '+m.id);
+			console.log('------------------------------------');
+			//<<------------------------------------------<<TEST
+			
+			Movies = Backbone.Collection.extend({
+				model: Movie
+			});
+			//Creo la colección de pelis.
+			movies = new Movies();
+			//Distintas maneras de agregar.
+			movies.add(m);
+			movies.add({
+				'title':'Predator',
+				'rating': '8.9'
+			});
+			
+			movies.add([
+			{
+				'title': 'Home Alone',
+				'rating': '9.1',
+				'director': 'Chris Columbus'
+			},
+			{
+				'title': 'Gladiator',
+				'rating': '8.1',
+			}
+			]);
+			//Uso info de alguna.
+			movies.get('Predator').get('rating');
+			
+			
+		</script>
+
+	</body>
+</html>
