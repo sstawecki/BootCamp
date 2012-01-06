@@ -1,0 +1,79 @@
+BODY{
+	text-align: center;
+}
+
+HEADER, FOOTER{
+	text-align: center;
+	font: normal 12px Arial;
+	color: green;
+}
+
+HEADER{
+	margin-bottom: 20px;
+}
+
+NAV{
+	font-weight: bold;
+	color: red;
+}
+
+@media screen and (max-width: 800px){
+
+	#content{
+		-moz-column-count: 1;
+		-moz-column-gap: 20px;
+		-webkit-column-count: 1;
+		-webkit-column-gap: 20px;
+		column-count: 1;
+		column-gap: 20px;
+	}
+	.mainImg{
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 1199px) and (min-width: 801px){
+
+	#content{
+		-moz-column-count: 3;
+		-moz-column-gap: 20px;
+		-webkit-column-count: 3;
+		-webkit-column-gap: 20px;
+		column-count: 3;
+		column-gap: 20px;
+	}
+	.mainImg{
+		width: 150px;
+		height: auto;
+	}
+
+}
+
+@media screen and (min-width: 1200px){
+
+	#content{
+		-moz-column-count: 4;
+		-moz-column-gap: 20px;
+		-webkit-column-count: 4;
+		-webkit-column-gap: 20px;
+		column-count: 4;
+		column-gap: 20px;
+	}
+	.mainImg{
+		width: 300px;
+		height: auto;
+	}
+
+}
+
+
+
+/*Común content*/
+#content{
+	border: solid 1px;
+	text-align: justify;
+	margin: 20px;
+	font: normal 12px Tahoma;
+	color: #555;
+}

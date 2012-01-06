@@ -1,0 +1,103 @@
+BODY{
+	text-align: center;
+	font: normal 12px Tahoma;
+}
+
+NAV{
+	display: inline-block;
+}
+
+LI:first-letter{
+	color: black;
+}
+
+LI.primero{
+	border-left: solid black 2px;
+}
+
+LI.ultimo{
+	border-right: solid black 2px;
+}
+
+#menu{
+	color: red;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+
+#logo, ASIDE{
+	-webkit-transform: rotate(169deg);
+	-moz-transform: rotate(169deg);
+    -o-transform: rotate(169deg);
+    -ms-transform: rotate(169deg);
+}
+
+
+LI A{
+	color: red;
+	font: bold 20px Arial Serif;
+	line-height: 45px;
+	text-decoration: none;
+	border: solid red 3px;
+	padding: 5px;
+}
+
+LI A:hover{
+	color: black;
+	border: dashed red;
+}
+
+P{
+	width: 400px;
+	text-align: justify;
+	margin: 10px auto
+}
+
+P A{
+	text-decoration: none;
+	color: red;
+	font-weight: bold;
+}
+
+P A:hover{
+	text-decoration: underline;
+	color: black;
+}
+
+ARTICLE{
+	border: solid 1px;
+	display: inline-block;
+	margin: auto 5px;
+	-moz-box-shadow: 10px 10px 10px #000; /* Firefox */
+	-webkit-box-shadow: 10px 10px 10px #000; /* Safari, Chrome */
+	box-shadow: 10px 10px 10px #000; /* CSS3 */
+}
+
+SPAN.hiOne{
+	background: red;
+}
+SPAN.hiTwo{
+	background: green;
+}
+SPAN.hiThree{
+	background: grey;
+}
+/*Este estilo pisa los 3 anteriores.*/
+SPAN[class^="hi"]{
+	background: pink;
+}
+
+SPAN[class$="One"]{
+	background: purple;
+}
+
+SPAN{
+	background: turquoise !important;
+}
+
+/*Vuela los P vacíos.*/
+P:empty{
+	display: none;
+}
+
