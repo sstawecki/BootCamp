@@ -1,0 +1,33 @@
+<head>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+    <div style="width:300px; height:100px; background-color:#80f0f0; text-align: center">
+        HELLO, I'M TEXT.
+    </div>
+	<!--Indispensable el ondragenter="return false" y el ondragover="return false"-->
+    <div id="target" ondragenter="return false;" ondragover="return false;" style="width:300px; height:100px; background-color:#80f080; text-align: center">
+		DRAG TEXT HERE.
+    </div>
+	
+	
+	<script type="text/javascript">
+		$('#target').bind('drop', function(){
+		    if (event.dataTransfer) {
+                var format = "Text";
+                var textData = event.dataTransfer.getData (format);
+                if (!textData) { //if !Text
+					if(event.dataTransfer.files){ //if file:
+						var file = event.dataTransfer.files[0];
+						$('#target').html('File name: '+file.name+'<br/>Size: '+file.size);
+					}
+                }else{
+					$('#target').html(textData); //o sino $('#target')[0].innerHTML para que me devuelva un HTML DOM Object y no un jQuey Object.
+				}
+            }
+		});
+		
+		
+	</script>
+	
+</body>

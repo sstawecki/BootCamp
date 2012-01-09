@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Day 11</title>
+		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
+		<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+		<!-- ---- -->
+	</head>
+	<body style="text-align: center;">
+		<header>
+			<h1>Day 11</h1>
+		</header>
+
+		<textarea id="test"></textarea>
+		<input type="button" id="btn" value="Test"/>
+		<div id='console'></div>
+		
+		<div class="container">
+			<div id='element' draggable="true" >Book</div>
+			<div id='trash' ondragenter="return false" ondragover="return false">Trash</div>
+		</div>
+		
+		<script type="text/javascript" src="js/common.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+			//Load once.
+				$('#test').html(localStorage.getItem('test'));
+			});
+			$('#btn').click(function(){
+				eval( $('#test').val() );
+			});
+			
+			$('#test').keyup(function(){
+			//Save on change.
+				localStorage.setItem('test', $('#test').val());
+			});
+		</script>
+		
+	</body>
+</html>
