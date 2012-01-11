@@ -1,18 +1,18 @@
 {
-	   name: 'Sebastián Stawecki',
-	   photo: 'http://8e.img.v4.skyrock.net/8e0/meanounette/pics/2946969387_1_11.jpg',
-		   contacts: [
-				  {
-						 name  : 'Batman',          
-						 url : 'http://btcmp.com/batman',                            
-				  },
-				  {
-						 name  : 'Sheldon Cooper',
-						 url : 'http://facebook.com/Sheldon'
-				  },
-				  {
-						 name  : 'Cumbio',
-						 url : 'http://fotolog.com/cumbio',
-				  }
-				]      
+	   "name": "Sebastian Stawecki",
+	   "photo": "http://8e.img.v4.skyrock.net/8e0/meanounette/pics/2946969387_1_11.jpg",
+	   "contacts": [
+			  {
+					 "name"  : "Batman",          
+					 "url" : "http://btcmp.com/batman"                         
+			  },
+			  {
+					 "name"  : "Sheldon Cooper",
+					 "url" : "http://facebook.com/Sheldon"
+			  },
+			  {
+					 "name"  : "Cumbio",
+					 "url" : "http://fotolog.com/cumbio"
+			  }
+			]
 }

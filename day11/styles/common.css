@@ -38,6 +38,10 @@ h1{
 	right: 20px;
 	border: dashed 3px;
 }
+
+#trash:hover{
+	background: url('../iphone_vs_stone.jpg') no-repeat;
+}
 DIV.container{
 	background: #CDCDCD;
 	height: 400px;

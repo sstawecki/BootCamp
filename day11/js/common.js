@@ -1,6 +1,6 @@
 $('#trash').bind('dragenter', function(){
 	$('#trash').css({
-		'background':'orange'
+		'background': 'url(\'iphone_vs_stone.jpg\') no-repeat'
 	});
 });
 
@@ -8,23 +8,6 @@ $('#trash').bind('dragleave', function(){
 	$('#trash').css({
 		'background':'red'
 	});
-});
-
-$('#trash').bind('drop', function(event){
-	console.log(event);
-	if (event.dataTransfer) {
-			var format = "Text";
-			var textData = event.dataTransfer.getData (format);
-			if (!textData) {
-				textData = "<span style='color:red'>The data transfer contains no text data.</span>";
-			}
-			
-			var targetDiv = document.getElementById ("target");
-			targetDiv.innerHTML = textData;
-	}
-
-	
-	
 });
 
 

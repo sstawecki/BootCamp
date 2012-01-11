@@ -1,4 +1,4 @@
-<html>
+<html manifest="cache.manifest">
 	<head>
 		<title>Day 11</title>
 		<link rel="stylesheet" type="text/css" href="styles/common.css"> 
@@ -33,6 +33,10 @@
 			$('#test').keyup(function(){
 			//Save on change.
 				localStorage.setItem('test', $('#test').val());
+			});
+			
+			$('#trash').bind('drop', function(event){
+				alert('Tiraron algo');
 			});
 		</script>
 		
